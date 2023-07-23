@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:57:25 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/07/20 22:23:20 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/07/23 15:46:06 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
-# endif
 
 int					ft_printf(const char *format, ...);
 char				*get_next_line(int fd);

@@ -6,12 +6,11 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 03:32:54 by vscode            #+#    #+#             */
-/*   Updated: 2023/07/20 21:57:32 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/07/23 15:45:45 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gnl_utils.h"
-#include "libft.h"
 
 char	*get_next_line(int fd)
 {
@@ -33,13 +32,13 @@ char	*read_line_break(int fd, char *memory)
 	char	*buffer;
 	ssize_t	read_bytes;
 
-	if (ft_strchr(memory, '\n') != NULL)
+	if (ft_gnl_strchr(memory, '\n') != NULL)
 		return (memory);
 	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (buffer == NULL)
 		return (NULL);
 	read_bytes = 1;
-	while (ft_strchr(memory, '\n') == NULL && read_bytes > 0)
+	while (ft_gnl_strchr(memory, '\n') == NULL && read_bytes > 0)
 	{
 		read_bytes = read(fd, buffer, BUFFER_SIZE);
 		if (read_bytes == -1)
@@ -50,7 +49,7 @@ char	*read_line_break(int fd, char *memory)
 		if (read_bytes == 0)
 			break ;
 		buffer[read_bytes] = '\0';
-		memory = ft_strjoin(memory, buffer);
+		memory = ft_gnl_strjoin(memory, buffer);
 	}
 	free(buffer);
 	return (memory);
@@ -101,7 +100,7 @@ char	*clear_memory(char *memory)
 		return (NULL);
 	}
 	i++;
-	clean_memory = malloc((ft_strlen(memory) - i + 1) * sizeof(char));
+	clean_memory = malloc((ft_gnl_strlen(memory) - i + 1) * sizeof(char));
 	if (clean_memory == NULL)
 		return (NULL);
 	j = 0;

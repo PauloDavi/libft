@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 21:26:08 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/07/20 21:50:34 by pdavi-al         ###   ########.fr       */
+/*   Created: 2023/03/14 14:52:02 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/07/23 15:55:46 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ static void	select_prefix(char *str_n, int *min_len, t_element element)
 {
 	(*min_len)++;
 	if (element.type == 'x' || element.type == 'p')
-		ft_strcpy(str_n, "0x", ++(*min_len));
+		ft_printf_strcpy(str_n, "0x", ++(*min_len));
 	else if (element.type == 'o')
-		ft_strcpy(str_n, "0", (*min_len));
+		ft_printf_strcpy(str_n, "0", (*min_len));
 	else if (element.type == 'X')
-		ft_strcpy(str_n, "0X", ++(*min_len));
+		ft_printf_strcpy(str_n, "0X", ++(*min_len));
 }
 
 static int	number_len_base(unsigned long nbr, int base_len, t_element element)
