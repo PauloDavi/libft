@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 19:30:16 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/07/20 23:49:56 by pdavi-al         ###   ########.fr       */
+/*   Created: 2023/07/23 15:45:32 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/07/23 17:55:55 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ unsigned char		ft_printf_get_flag(char c);
 int					ft_printf_atoi(const char **nptr);
 void				ft_printf_print_spaces(int spaces, char c);
 int					ft_printf_printnbr(char *str_n, int len, t_element element);
+void				ft_printf_strcpy(char *dest, char *source, int len);
 
 #endif

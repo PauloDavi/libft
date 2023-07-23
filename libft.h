@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:57:25 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/07/20 22:23:20 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/07/23 15:46:06 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,6 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
-# endif
-
 int					ft_printf(const char *format, ...);
 char				*get_next_line(int fd);
 int					ft_atoi(const char *nptr);
@@ -40,6 +36,7 @@ int					ft_isdigit(int c);
 int					ft_isprint(int c);
 int					ft_isspace(char c);
 void				*ft_memchr(const void *s, int c, size_t n);
+int					ft_strcmp(const char *s1, const char *s2);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
