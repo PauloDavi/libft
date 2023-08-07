@@ -8,8 +8,8 @@ OBJ_DIR := build
 INCLUDE_DIR := includes
 INCLUDES := -I$(INCLUDE_DIR) -I.
 
-STRING_SRC := ft_strncmp.c ft_strnstr.c ft_striteri.c ft_strjoin.c ft_strdup.c ft_itoa.c ft_strtrim.c ft_strlen.c
-STRING_SRC += ft_strlcat.c ft_split.c ft_substr.c ft_strlcpy.c ft_strchr.c ft_strrchr.c ft_strmapi.c ft_strcpy.c
+STRING_SRC := ft_strncmp.c ft_strnstr.c ft_striteri.c ft_strjoin.c ft_strdup.c ft_itoa.c ft_strtrim.c ft_strlen.c ft_strcmp.c
+STRING_SRC += ft_strlcat.c ft_split.c ft_substr.c ft_strlcpy.c ft_strchr.c ft_strrchr.c ft_strmapi.c ft_strcpy.c ft_free_split.c
 MEMORY_SRC := ft_memcmp.c ft_memcpy.c ft_calloc.c ft_memset.c ft_bzero.c ft_memchr.c ft_memmove.c
 MATH_SRC := ft_atoi.c ft_atof.c
 CHAR_SRC := ft_isalnum.c ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c ft_toupper.c ft_tolower.c ft_isspace.c
@@ -34,10 +34,10 @@ $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
 clean:
-	rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
