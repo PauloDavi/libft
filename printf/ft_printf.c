@@ -6,16 +6,30 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 19:37:02 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/07/23 17:53:42 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/09/15 22:20:57 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "printf_utils.h"
 
-static int	va_printf(const char *format, va_list ap);
+static int	va_printf(const char *format, va_list ap, int fd);
 static int	print_var(t_element element, va_list ap);
 static void	get_element(const char **format, t_element *element, va_list ap);
+
+int	ft_fprintf(int fd, const char *format, ...)
+{
+	va_list	ap;
+	int		len;
+
+	len = 0;
+	if (format == NULL || fd < 0)
+		return (0);
+	va_start(ap, format);
+	len = va_printf(format, ap, fd);
+	va_end(ap);
+	return (len);
+}
 
 int	ft_printf(const char *format, ...)
 {
@@ -26,17 +40,18 @@ int	ft_printf(const char *format, ...)
 	if (format == NULL)
 		return (0);
 	va_start(ap, format);
-	len = va_printf(format, ap);
+	len = va_printf(format, ap, 1);
 	va_end(ap);
 	return (len);
 }
 
-static int	va_printf(const char *format, va_list ap)
+static int	va_printf(const char *format, va_list ap, int fd)
 {
 	int			len;
 	t_element	element;
 
 	len = 0;
+	element.fd = fd;
 	while (*format != '\0')
 	{
 		if (*format == '%')
@@ -50,7 +65,7 @@ static int	va_printf(const char *format, va_list ap)
 		}
 		else
 		{
-			write(1, format++, 1);
+			write(fd, format++, 1);
 			len += 1;
 		}
 	}
@@ -80,7 +95,7 @@ static int	print_var(t_element element, va_list ap)
 		len = ft_printf_putchar((unsigned char)va_arg(ap, int), element);
 	else if (element.type == '%')
 	{
-		write(1, &element.type, 1);
+		write(element.fd, &element.type, 1);
 		len++;
 	}
 	return (len);

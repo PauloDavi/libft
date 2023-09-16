@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:44:50 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/07/23 15:55:30 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/09/15 22:08:51 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ unsigned char	ft_printf_get_flag(char c)
 	return (HASH_FLAG_MASK);
 }
 
-void	ft_printf_print_spaces(int spaces, char c)
+void	ft_printf_print_spaces(int spaces, char c, int fd)
 {
 	while (spaces--)
-		write(1, &c, 1);
+		write(fd, &c, 1);
 }

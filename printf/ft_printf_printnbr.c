@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 21:21:24 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/07/23 15:55:35 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/09/15 22:08:15 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int	ft_printf_printnbr(char *str_n, int len, t_element element)
 	if (spaces > 0)
 	{
 		if (!(element.flags & MINUS_FLAG_MASK))
-			ft_printf_print_spaces(spaces, ' ');
+			ft_printf_print_spaces(spaces, ' ', element.fd);
 		while (*str_n != '\0')
-			write(1, str_n++, 1);
+			write(element.fd, str_n++, 1);
 		if (element.flags & MINUS_FLAG_MASK)
-			ft_printf_print_spaces(spaces, ' ');
+			ft_printf_print_spaces(spaces, ' ', element.fd);
 		return (element.width);
 	}
 	while (*str_n != '\0')
-		write(1, str_n++, 1);
+		write(element.fd, str_n++, 1);
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:57:25 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/08/08 00:07:55 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/09/15 22:10:22 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_list
 }					t_list;
 
 int					ft_printf(const char *format, ...);
+int					ft_fprintf(int fd, const char *format, ...);
 char				*get_next_line(int fd);
 int					ft_atoi(const char *nptr);
 float				ft_atof(char *str);

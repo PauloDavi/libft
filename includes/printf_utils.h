@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 15:45:32 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/07/23 17:55:55 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/09/15 22:08:47 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_element
 	int				width;
 	int				precision;
 	char			type;
+	int				fd;
 }					t_element;
 
 int					ft_printf_putstr(const char *str, t_element element);
@@ -57,7 +58,7 @@ int					ft_printf_isflag(char c);
 int					ft_printf_istype(char c);
 unsigned char		ft_printf_get_flag(char c);
 int					ft_printf_atoi(const char **nptr);
-void				ft_printf_print_spaces(int spaces, char c);
+void				ft_printf_print_spaces(int spaces, char c, int fd);
 int					ft_printf_printnbr(char *str_n, int len, t_element element);
 void				ft_printf_strcpy(char *dest, char *source, int len);
 
