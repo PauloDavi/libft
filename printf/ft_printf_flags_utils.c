@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_flags_utils.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:44:50 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/09/15 22:08:51 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/09/29 01:11:05 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ unsigned char	ft_printf_get_flag(char c)
 void	ft_printf_print_spaces(int spaces, char c, int fd)
 {
 	while (spaces--)
-		write(fd, &c, 1);
+		(void)write(fd, &c, 1);
 }

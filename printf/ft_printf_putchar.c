@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_putchar.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 21:21:24 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/09/15 22:08:25 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/09/29 01:10:55 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	ft_printf_putchar(const char c, t_element element)
 			ft_printf_print_spaces(spaces, ' ', element.fd);
 		else if (element.flags & ZERO_FLAG_MASK)
 			ft_printf_print_spaces(spaces, '0', element.fd);
-		write(element.fd, &c, 1);
+		(void)write(element.fd, &c, 1);
 		if (element.flags & MINUS_FLAG_MASK)
 			ft_printf_print_spaces(spaces, ' ', element.fd);
 		return (element.width);
 	}
-	write(element.fd, &c, 1);
+	(void)write(element.fd, &c, 1);
 	return (1);
 }

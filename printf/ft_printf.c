@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 19:37:02 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/09/15 22:20:57 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/09/29 01:09:53 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static int	va_printf(const char *format, va_list ap, int fd)
 		}
 		else
 		{
-			write(fd, format++, 1);
+			(void)write(fd, format++, 1);
 			len += 1;
 		}
 	}
@@ -95,7 +95,7 @@ static int	print_var(t_element element, va_list ap)
 		len = ft_printf_putchar((unsigned char)va_arg(ap, int), element);
 	else if (element.type == '%')
 	{
-		write(element.fd, &element.type, 1);
+		(void)write(element.fd, &element.type, 1);
 		len++;
 	}
 	return (len);
