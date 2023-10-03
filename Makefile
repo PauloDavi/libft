@@ -13,7 +13,7 @@ INCLUDES := -I$(INCLUDE_DIR) -I.
 
 STRING_SRC := ft_strncmp.c ft_strnstr.c ft_striteri.c ft_strjoin.c ft_strdup.c ft_itoa.c ft_strtrim.c ft_strlen.c ft_strcmp.c ft_split_size.c
 STRING_SRC += ft_strlcat.c ft_split.c ft_substr.c ft_strlcpy.c ft_strchr.c ft_strrchr.c ft_strmapi.c ft_strcpy.c ft_free_split.c
-MEMORY_SRC := ft_memcmp.c ft_memcpy.c ft_calloc.c ft_memset.c ft_bzero.c ft_memchr.c ft_memmove.c ft_intswap.c
+MEMORY_SRC := ft_memcmp.c ft_memcpy.c ft_calloc.c ft_memset.c ft_bzero.c ft_memchr.c ft_memmove.c ft_intswap.c ft_pswap.c
 MATH_SRC := ft_atoi.c ft_atof.c
 CHAR_SRC := ft_isalnum.c ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c ft_toupper.c ft_tolower.c ft_isspace.c
 LIST_SRCC := ft_lstclear.c ft_lstdelone.c ft_lstadd_front.c ft_lstnew.c ft_lstmap.c ft_lstlast.c ft_lstsize.c ft_lstiter.c ft_lstadd_back.c ft_lstrm.c
