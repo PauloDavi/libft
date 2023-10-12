@@ -3,16 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lst_to_array.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:26:19 by cobli             #+#    #+#             */
-/*   Updated: 2023/10/02 22:33:41 by cobli            ###   ########.fr       */
+/*   Updated: 2023/10/12 13:56:10 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	**ft_lst_to_array(t_list *lst)
+static void	*select_content(void *content);
+
+void	*ft_lst_to_array(t_list *lst)
+{
+	return (ft_lst_to_array_choice(lst, select_content));
+}
+
+void	*ft_lst_to_array_choice(t_list *lst, void *(*selection)(void *))
 {
 	size_t	size;
 	void	**array;
@@ -22,9 +29,14 @@ void	**ft_lst_to_array(t_list *lst)
 	size = 0;
 	while (lst != NULL)
 	{
-		array[size] = lst->content;
+		array[size] = selection(lst->content);
 		size++;
 		lst = lst->next;
 	}
 	return (array);
+}
+
+static void	*select_content(void *content)
+{
+	return (content);
 }
