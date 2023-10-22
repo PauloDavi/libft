@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:26:19 by cobli             #+#    #+#             */
-/*   Updated: 2023/10/12 13:56:10 by luizedua         ###   ########.fr       */
+/*   Updated: 2023/10/22 00:23:23 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	*ft_lst_to_array_choice(t_list *lst, void *(*selection)(void *))
 	size_t	size;
 	void	**array;
 
+	if (lst == NULL)
+		return (NULL);
 	size = ft_lstsize(lst);
 	array = ft_calloc(size + 1, sizeof(void *));
 	size = 0;
