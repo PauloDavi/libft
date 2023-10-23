@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 03:32:54 by vscode            #+#    #+#             */
-/*   Updated: 2023/10/21 23:58:11 by luizedua         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:53:24 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,11 +108,6 @@ char	*clear_memory(char *memory)
 	clean_memory = malloc((ft_gnl_strlen(memory) - i + 1) * sizeof(char));
 	if (clean_memory == NULL)
 		return (NULL);
-	// if (clean_memory[0] != '\0')
-	// {
-	// 	free(clean_memory);
-	// 	return (NULL);
-	// }
 	j = 0;
 	while (memory[i] != '\0')
 		clean_memory[j++] = memory[i++];
