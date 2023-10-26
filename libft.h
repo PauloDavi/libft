@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: paulo <paulo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:57:25 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/10/11 19:08:42 by luizedua         ###   ########.fr       */
+/*   Updated: 2023/10/26 02:55:26 by paulo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdbool.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -72,14 +73,14 @@ void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
 // Char
-int					ft_isalnum(int c);
-int					ft_isalpha(int c);
-int					ft_isascii(int c);
-int					ft_isdigit(int c);
-int					ft_isprint(int c);
-int					ft_isspace(char c);
-int					ft_tolower(int c);
-int					ft_toupper(int c);
+bool				ft_isalnum(int c);
+bool				ft_isalpha(int c);
+bool				ft_isascii(int c);
+bool				ft_isdigit(int c);
+bool				ft_isprint(int c);
+bool				ft_isspace(char c);
+bool				ft_tolower(int c);
+bool				ft_toupper(int c);
 
 // List
 void				ft_lstadd_front(t_list **lst, t_list *new);
@@ -95,7 +96,7 @@ t_list				*ft_lstrm(t_list *lst, t_list *rm_element,
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 void				*ft_lst_to_array(t_list *lst);
-void				*ft_lst_to_array_choice(t_list *lst, \
+void				*ft_lst_to_array_choice(t_list *lst,
 						void *(*selection)(void *));
 
 #endif
