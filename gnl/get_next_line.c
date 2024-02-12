@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: paulo <paulo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 03:32:54 by vscode            #+#    #+#             */
-/*   Updated: 2023/10/22 22:53:24 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/02/12 13:27:44 by paulo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = get_whole_line(memory[fd]);
 	memory[fd] = clear_memory(memory[fd]);
+	if (memory[fd] == NULL)
+		return (line);
 	if (memory[fd][0] == '\0')
 	{
 		free(memory[fd]);
