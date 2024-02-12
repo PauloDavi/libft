@@ -6,7 +6,7 @@
 /*   By: paulo <paulo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:57:25 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/10/26 02:55:26 by paulo            ###   ########.fr       */
+/*   Updated: 2024/02/12 14:38:19 by paulo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdbool.h>
+# include <limits.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -32,6 +33,7 @@ char				*get_next_line(int fd);
 // Math
 int					ft_atoi(const char *nptr);
 float				ft_atof(char *str);
+int					ft_safe_atoi(const char *nptr, bool *has_err);
 
 // Memory
 void				ft_bzero(void *s, size_t n);
