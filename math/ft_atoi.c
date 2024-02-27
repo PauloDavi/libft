@@ -6,7 +6,7 @@
 /*   By: paulo <paulo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:05:36 by pdavi-al          #+#    #+#             */
-/*   Updated: 2024/02/12 14:38:34 by paulo            ###   ########.fr       */
+/*   Updated: 2024/02/26 22:40:22 by paulo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int	ft_safe_atoi(const char *nptr, bool *has_err)
 		*has_err = verify_overflow(number, (nptr[i] - '0'), multiplyer);
 		number = (number * 10) + (multiplyer * (nptr[i++] - '0'));
 	}
+	*has_err = (nptr[i] != '\0');
 	return (number);
 }
 

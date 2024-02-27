@@ -23,7 +23,6 @@
 # define DEC_BASE "0123456789"
 # define HEX_U_BASE "0123456789ABCDEF"
 # define HEX_L_BASE "0123456789abcdef"
-# define UINT_MAX 0xFFFFFFFF
 
 # define PTR_HEX_L_PREFIX "0x"
 # define HEX_U_PREFIX "0X"

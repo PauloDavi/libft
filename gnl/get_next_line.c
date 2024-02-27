@@ -6,17 +6,25 @@
 /*   By: paulo <paulo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 03:32:54 by vscode            #+#    #+#             */
-/*   Updated: 2024/02/12 13:27:44 by paulo            ###   ########.fr       */
+/*   Updated: 2024/02/26 23:22:56 by paulo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gnl_utils.h"
 
-char	*get_next_line(int fd)
+char	*get_memory(void)
 {
-	char		*line;
 	static char	*memory[4096];
 
+	return (memory);
+}
+
+char	*get_next_line(int fd)
+{
+	char	*line;
+	char	**memory;
+
+	memory = get_memory();
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	memory[fd] = read_line_break(fd, memory[fd]);

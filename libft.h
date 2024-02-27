@@ -6,15 +6,15 @@
 /*   By: paulo <paulo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:57:25 by pdavi-al          #+#    #+#             */
-/*   Updated: 2024/02/12 14:38:19 by paulo            ###   ########.fr       */
+/*   Updated: 2024/02/26 23:22:13 by paulo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdbool.h>
 # include <limits.h>
+# include <stdbool.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -29,6 +29,7 @@ typedef struct s_list
 int					ft_printf(const char *format, ...);
 int					ft_fprintf(int fd, const char *format, ...);
 char				*get_next_line(int fd);
+void				free_gnl_memory(int fd);
 
 // Math
 int					ft_atoi(const char *nptr);

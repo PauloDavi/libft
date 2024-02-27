@@ -3,7 +3,7 @@ vpath %.c string memory includes math char list file gnl printf
 NAME := libft.a
 
 CC := cc
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra
 CFLAGS += -O3 -g3
 
 OBJ_DIR := build

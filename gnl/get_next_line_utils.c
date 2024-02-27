@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: paulo <paulo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 03:32:47 by vscode            #+#    #+#             */
-/*   Updated: 2023/07/23 15:45:47 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2024/02/26 23:23:09 by paulo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,16 @@ size_t	ft_gnl_strlcpy(char *dest, const char *src, size_t size)
 	}
 	dest[i] = '\0';
 	return (ft_gnl_strlen(src));
+}
+
+void	free_gnl_memory(int fd)
+{
+	char	**memory;
+
+	memory = get_memory();
+	if (memory[fd] != NULL)
+	{
+		free(memory[fd]);
+		memory[fd] = NULL;
+	}
 }

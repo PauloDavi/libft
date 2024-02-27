@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gnl_utils.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: paulo <paulo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 15:45:22 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/07/23 15:48:13 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2024/02/26 23:24:13 by paulo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # endif
 
 char	*get_next_line(int fd);
+char	*get_memory(void);
+void	free_gnl_memory(int fd);
 char	*clear_memory(char *memory);
 char	*get_whole_line(char *memory);
 char	*read_line_break(int fd, char *memory);
