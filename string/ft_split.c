@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 13:31:45 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/08/07 20:17:03 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2025/03/30 16:59:42 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
-{
-	return (ft_split_size(s, c, NULL));
+char **ft_split(char const *s, char c) {
+  return (ft_split_size(s, c, NULL));
 }

@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_intswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 00:06:38 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/08/08 00:07:42 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2025/03/30 17:00:47 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_intswap(int *a, int *b)
-{
-	int	temp;
+void ft_intswap(int *a, int *b) {
+  int temp;
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+  temp = *a;
+  *a = *b;
+  *b = temp;
 }

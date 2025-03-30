@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 13:31:30 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/05/03 23:51:48 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2025/03/30 17:01:43 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
-{
-	while (*s != '\0')
-		ft_putchar_fd(*s++, fd);
+void ft_putstr_fd(char *s, int fd) {
+  while (*s != '\0')
+    ft_putchar_fd(*s++, fd);
 }

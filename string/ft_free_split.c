@@ -3,24 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 04:05:39 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/08/02 20:44:54 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2025/03/30 16:59:34 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_split(char **words)
-{
-	size_t	i;
+void ft_free_split(char **words) {
+  size_t i;
 
-	i = 0;
-	while (words[i])
-	{
-		free(words[i]);
-		i++;
-	}
-	free(words);
+  i = 0;
+  while (words[i]) {
+    free(words[i]);
+    i++;
+  }
+  free(words);
 }

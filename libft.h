@@ -6,7 +6,7 @@
 /*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:57:25 by pdavi-al          #+#    #+#             */
-/*   Updated: 2025/03/30 15:31:17 by cobli            ###   ########.fr       */
+/*   Updated: 2025/03/30 16:59:27 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void free_gnl_memory(int fd);
 int ft_atoi(const char *nptr);
 float ft_atof(char *str);
 int ft_safe_atoi(const char *nptr, bool *has_err);
+size_t ft_nbrlen(long num);
+size_t ft_unbrlen(unsigned long num);
 
 // Memory
 void ft_bzero(void *s, size_t n);

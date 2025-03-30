@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 19:53:12 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/05/03 20:54:48 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2025/03/30 17:01:19 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
-{
-	while (lst != NULL)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+void ft_lstiter(t_list *lst, void (*f)(void *)) {
+  while (lst != NULL) {
+    f(lst->content);
+    lst = lst->next;
+  }
 }

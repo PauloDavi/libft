@@ -6,17 +6,16 @@
 /*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:23:56 by cobli             #+#    #+#             */
-/*   Updated: 2023/10/02 22:26:42 by cobli            ###   ########.fr       */
+/*   Updated: 2025/03/30 17:00:39 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_pswap(void **a, void **b)
-{
-	void	*temp;
+void ft_pswap(void **a, void **b) {
+  void *temp;
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+  temp = *a;
+  *a = *b;
+  *b = temp;
 }
