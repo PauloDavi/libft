@@ -3,7 +3,7 @@ vpath %.c string memory includes math char list file gnl printf
 NAME := libft.a
 
 CC := cc
-CFLAGS := -Wall -Wextra
+CFLAGS := -Wall -Wextra -Wno-unused-parameter
 CFLAGS += -O3 -g3
 
 OBJ_DIR := build
@@ -20,15 +20,14 @@ MEMORY_SRC += ft_memchr.c ft_memmove.c ft_intswap.c ft_pswap.c
 MATH_SRC := ft_atoi.c ft_atof.c
 CHAR_SRC := ft_isalnum.c ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c
 CHAR_SRC += ft_toupper.c ft_tolower.c ft_isspace.c
-LIST_SRC := ft_lstclear.c ft_lstdelone.c ft_lstadd_front.c ft_lstnew.c
-LIST_SRC += ft_lst_to_array.c ft_lstlast.c ft_lstsize.c ft_lstiter.c
+LIST_SRC := ft_lstclear.c ft_lstdelone.c ft_lstadd_front.c ft_lstnew.c ft_lst_revert_iter.c
+LIST_SRC += ft_lst_to_array.c ft_lstlast.c ft_lstsize.c ft_lstiter.c ft_lst_sort.c
 LIST_SRC += ft_lstadd_back.c ft_lstmap.c ft_lstrm.c
 FILE_SRC := ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_putchar_fd.c
 GNL_SRC := get_next_line_utils.c get_next_line.c
 PRINT_SCR := ft_printf_putnbr.c ft_printf_flags_utils.c ft_printf_putpointer.c
 PRINT_SCR += ft_printf_putnbr_base.c ft_printf_strcpy.c ft_printf_printnbr.c
 PRINT_SCR += ft_printf_putstr.c ft_printf_atoi.c ft_printf_putchar.c ft_printf.c
-
 
 SRCS := $(STRING_SRC) $(MEMORY_SRC) $(MATH_SRC) $(CHAR_SRC) $(LIST_SRC)
 SRCS += $(FILE_SRC) $(GNL_SRC) $(PRINT_SCR)

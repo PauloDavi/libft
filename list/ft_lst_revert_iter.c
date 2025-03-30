@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lst_revert_iter.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 13:32:13 by pdavi-al          #+#    #+#             */
-/*   Updated: 2025/03/30 11:59:00 by cobli            ###   ########.fr       */
+/*   Created: 2023/05/03 19:53:12 by pdavi-al          #+#    #+#             */
+/*   Updated: 2025/03/30 15:42:17 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2) {
-  size_t s1_len;
-  size_t s2_len;
-  char *str_join;
+void ft_lst_revert(t_list *lst) {
+  if (!lst || !lst->next) return;
 
-  s1_len = ft_strlen(s1);
-  s2_len = ft_strlen(s2);
-  str_join = malloc((s1_len + s2_len + 1) * sizeof(char));
-  if (str_join == NULL)
-    return (NULL);
-  ft_strlcpy(str_join, s1, s1_len + s2_len + 1);
-  ft_strlcat(str_join, s2, s1_len + s2_len + 1);
-  return (str_join);
+  t_list *front = lst;
+  t_list *back = ft_lstlast(lst);
+  size_t size = ft_lstsize(lst);
+
+  for (size_t i = 0; i < size / 2; i++) {
+    ft_pswap(&front->content, &back->content);
+    front = front->next;
+
+    t_list *temp = lst;
+    while (temp->next != back) {
+      temp = temp->next;
+    }
+    back = temp;
+  }
 }
