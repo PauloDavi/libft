@@ -6,7 +6,7 @@
 /*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:57:25 by pdavi-al          #+#    #+#             */
-/*   Updated: 2025/03/30 16:59:27 by cobli            ###   ########.fr       */
+/*   Updated: 2025/04/06 12:02:14 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void ft_lstdelone(t_list *lst, void (*del)(void *));
 void ft_lstclear(t_list **lst, void (*del)(void *));
 void ft_lstiter(t_list *lst, void (*f)(void *));
 void ft_lst_sort(t_list *lst, int (*cmp)(void *, void *));
-void ft_lst_revert(t_list *lst);
+void ft_lst_reverse(t_list **lst);
 t_list *ft_lstnew(void *content);
 t_list *ft_lstlast(t_list *lst);
 t_list *ft_lstrm(t_list *lst, t_list *rm_element, void (*del)(void *));

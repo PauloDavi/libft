@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_revert_iter.c                               :+:      :+:    :+:   */
+/*   ft_lst_reverse.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 19:53:12 by pdavi-al          #+#    #+#             */
-/*   Updated: 2025/03/30 17:01:29 by cobli            ###   ########.fr       */
+/*   Updated: 2025/04/06 12:02:05 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lst_revert(t_list *lst) {
-  if (!lst || !lst->next) return;
+void ft_lst_reverse(t_list **lst) {
+  t_list *prev = NULL;
+  t_list *current = *lst;
 
-  t_list *front = lst;
-  t_list *back = ft_lstlast(lst);
-  size_t size = ft_lstsize(lst);
-
-  for (size_t i = 0; i < size / 2; i++) {
-    ft_pswap(&front->content, &back->content);
-    front = front->next;
-
-    t_list *temp = lst;
-    while (temp->next != back) {
-      temp = temp->next;
-    }
-    back = temp;
+  while (current != NULL) {
+    t_list *next = current->next;
+    current->next = prev;
+    prev = current;
+    current = next;
   }
+
+  *lst = prev;
 }
