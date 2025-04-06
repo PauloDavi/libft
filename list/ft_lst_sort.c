@@ -6,42 +6,62 @@
 /*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/30 10:32:11 by cobli             #+#    #+#             */
-/*   Updated: 2025/03/30 17:01:27 by cobli            ###   ########.fr       */
+/*   Updated: 2025/04/06 19:57:26 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 #include "libft.h"
 
-void ft_lst_sort(t_list *lst, int (*cmp)(void *, void *)) {
-  if (!lst || !cmp)
+static void split_list(t_list *source, t_list **front, t_list **back);
+static t_list *merge_sorted(t_list *a, t_list *b, int (*cmp)(void *, void *));
+
+void ft_lst_sort(t_list **lst, int (*cmp)(void *, void *)) {
+  if (!lst || !*lst || !(*lst)->next)
     return;
 
-  t_list *current;
-  t_list *index;
-  size_t list_size = ft_lstsize(lst);
-  size_t i;
-  size_t j;
-  bool swapped;
-  void *temp;
+  t_list *head = *lst;
+  t_list *a, *b;
 
-  for (i = 0; i < list_size - 1; i++) {
-    swapped = false;
-    current = lst;
-    index = lst->next;
+  split_list(head, &a, &b);
 
-    for (j = 0; j < list_size - i - 1; j++) {
-      if (index && cmp(current->content, index->content) > 0) {
-        temp = current->content;
-        current->content = index->content;
-        index->content = temp;
-        swapped = true;
-      }
-      current = current->next;
-      if (index)
-        index = index->next;
+  ft_lst_sort(&a, cmp);
+  ft_lst_sort(&b, cmp);
+
+  *lst = merge_sorted(a, b, cmp);
+}
+
+static void split_list(t_list *source, t_list **front, t_list **back) {
+  t_list *slow = source;
+  t_list *fast = source->next;
+
+  while (fast != NULL) {
+    fast = fast->next;
+    if (fast != NULL) {
+      slow = slow->next;
+      fast = fast->next;
     }
-
-    if (!swapped)
-      break;
   }
+
+  *front = source;
+  *back = slow->next;
+  slow->next = NULL;
+}
+
+static t_list *merge_sorted(t_list *a, t_list *b, int (*cmp)(void *, void *)) {
+  if (!a) return b;
+  if (!b) return a;
+
+  t_list *result = NULL;
+
+  if (cmp(a->content, b->content) <= 0) {
+    result = a;
+    result->next = merge_sorted(a->next, b, cmp);
+  } else {
+    result = b;
+    result->next = merge_sorted(a, b->next, cmp);
+  }
+
+  return result;
 }
