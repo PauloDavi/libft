@@ -6,7 +6,7 @@
 /*   By: cobli <cobli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:57:25 by pdavi-al          #+#    #+#             */
-/*   Updated: 2025/04/06 19:49:21 by cobli            ###   ########.fr       */
+/*   Updated: 2025/05/10 12:55:18 by cobli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ bool ft_isprint(int c);
 bool ft_isspace(char c);
 bool ft_tolower(int c);
 bool ft_toupper(int c);
+bool ft_islower(int c);
+bool ft_isupper(int c);
 
 // List
 void ft_lstadd_front(t_list **lst, t_list *new);
